@@ -1,5 +1,5 @@
 {
   "watch": ["src"],
-  "ext": "js,json",
-  "exec": "npm run lint && node src/app.js"
+  "ext": "js,json", 
+  "exec": "npm run lint && node --inspect=0.0.0.0:9229 src/app.js"
 }

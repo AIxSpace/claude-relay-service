@@ -1024,6 +1024,16 @@ class ClaudeRelayService {
         options.headers['anthropic-beta'] = betaHeader
       }
 
+      const requestUrl = `https://${options.hostname}:${options.port || 443}${options.path}`
+      logger.debug('------')
+      logger.debug('request details:', {
+        url: requestUrl,
+        method: options.method,
+        headers: options.headers,
+        body: requestPayload
+      })
+      logger.debug('------')
+
       const req = https.request(options, (res) => {
         let responseData = Buffer.alloc(0)
 

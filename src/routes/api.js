@@ -42,6 +42,10 @@ async function handleMessagesRequest(req, res) {
   try {
     const startTime = Date.now()
 
+    console.log('------')
+    console.log('begin handle message request')
+    console.log('------')
+
     // Claude 服务权限校验，阻止未授权的 Key
     if (
       req.apiKey.permissions &&
